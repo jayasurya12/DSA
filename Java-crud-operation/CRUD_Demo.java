@@ -16,7 +16,7 @@ class Employee {
     public int getSalary() {
         return salary;
     }
-    public int getEname() {
+    public String getEname() {
         return ename;
     }
     public String toString() {
@@ -33,6 +33,7 @@ class CRUD_Demo {
         int ch;
 
         do {
+
             System.out.println("1.Insert");
             System.out.println("2.Display");
             System.out.println("3.Search");
@@ -40,10 +41,11 @@ class CRUD_Demo {
             System.out.println("5.Update");
             System.out.println("Enter your Choice : ");
             ch = inputInt.nextInt();
+
             switch (ch) {
                 case 1:
                     System.out.print("Enter Employee Number: ");
-                    int eno = intput.nextInt();
+                    int eno = inputInt.nextInt();
                     System.out.print("Enter Employee Name: ");
                     String ename = inputString.nextLine();
                     System.out.print("Enter Salary: ");
@@ -61,7 +63,7 @@ class CRUD_Demo {
                 case 3:
                     boolean found = false;
                     System.out.println("Enter Empno to Search : ");
-                    empno = s.nextInt();
+                    int empno = inputString.nextInt();
                     System.out.println("--------------------------------------------------");
                     i = C.iterator();
                     while(i.hasNext()) {
@@ -76,7 +78,28 @@ class CRUD_Demo {
                     }
                     System.out.println("--------------------------------------------------");
                 break;
+                case 4:
+                    found = false;
+                    System.out.println("Enter Empno to Delete : ");
+                    empno = inputString.nextInt();
+                    System.out.println("--------------------------------------------------");
+                    i = C.iterator();
+                    while(i.hasNext()) {
+                        Employee e = i.next();
+                        if (e.getEmpno() == empno) {
+                            i.remove();
+                            found = true;
+                        }
+                    }
+                    if (!found) {
+                        System.out.println("Record Not found");
+                    } else {
+                        System.out.println("Record is Deleted Successfully.....!");
+                    }
+                    System.out.println("--------------------------------------------------");
+                break;
             }
         } while (ch !=0);
     }
 }
+
