@@ -120,7 +120,7 @@ class CRUD_Demo {
                     } else {
                         System.out.println("Record is Updated Successfully.....!");
                     }
-                    System.out.println("--------------------------------------------------");
+                    System.out.println("------------------------<>--------------------------");
                     break;
                 case 0:
                     System.out.println("Exiting the program.");
