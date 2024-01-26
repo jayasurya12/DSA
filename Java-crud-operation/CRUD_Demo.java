@@ -52,6 +52,7 @@ class CRUD_Demo {
                 break;
                 case 2:
                     System.out.println("--------------------------------------------------");
+
                     Iterator<Employee> i = C.iterator();
                     while(i.hasNext()) {
                         Employee e = i.next();
@@ -80,3 +81,7 @@ class CRUD_Demo {
         } while (ch !=0);
     }
 }
+
+notepad C:\Users\Atatus Admin/.ssh/id_ed25519.pub
+Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard
+
