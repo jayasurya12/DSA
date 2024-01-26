@@ -63,7 +63,7 @@ class CRUD_Demo {
                     break;
                 case 3:
                     boolean found = false;
-                    System.out.println("Enter Empno to Search : ");
+                    System.out.print("Enter Empno to Search : ");
                     int empno = inputInt.nextInt();
                     System.out.println("--------------------------------------------------");
                     i = arrayList.iterator();
@@ -81,7 +81,7 @@ class CRUD_Demo {
                     break;
                 case 4:
                     found = false;
-                    System.out.println("Enter Empno to Delete : ");
+                    System.out.print("Enter Empno to Delete : ");
                     empno = inputInt.nextInt();
                     System.out.println("--------------------------------------------------");
                     i = arrayList.iterator();
@@ -101,15 +101,15 @@ class CRUD_Demo {
                     break;
                 case 5:
                     found = false;
-                    System.out.println("Enter Empno to Update : ");
+                    System.out.print("Enter Empno to Update : ");
                     empno = inputInt.nextInt();
                     ListIterator<Employee> li = ((List<Employee>)arrayList).listIterator();
                     while(li.hasNext()) {
                         Employee e = li.next();
                         if (e.getEmpno() == empno) {
-                            System.out.println("Enter new Name: ");
+                            System.out.print("Enter new Name: ");
                             ename = inputString.nextLine();
-                            System.out.println("Enter new Salary: ");
+                            System.out.print("Enter new Salary: ");
                             salary = inputInt.nextInt();
                             li.set(new Employee(empno, ename, salary));
                             found = true;
@@ -120,7 +120,7 @@ class CRUD_Demo {
                     } else {
                         System.out.println("Record is Updated Successfully.....!");
                     }
-                    System.out.println("--------------------------------------------------");
+                    System.out.println("------------------------<>--------------------------");
                     break;
                 case 0:
                     System.out.println("Exiting the program.");
