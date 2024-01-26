@@ -27,18 +27,18 @@ class Employee {
 class CRUD_Demo {
     public static void main (String[] args) {
 
-        Collection<Employee> arrayList = new ArrayList<Employee>();
+        Collection<Employee> arrayList = new ArrayList<>();
         Scanner inputInt = new Scanner(System.in);
         Scanner inputString = new Scanner(System.in);
         int ch;
 
         do {
-
             System.out.println("1.Insert");
             System.out.println("2.Display");
             System.out.println("3.Search");
             System.out.println("4.Delete");
             System.out.println("5.Update");
+            System.out.println("0.Exit");
             System.out.println("Enter your Choice : ");
             ch = inputInt.nextInt();
 
@@ -51,7 +51,7 @@ class CRUD_Demo {
                     System.out.print("Enter Salary: ");
                     int salary = inputInt.nextInt();
                     arrayList.add(new Employee(empNo, ename, salary));
-                break;
+                    break;
                 case 2:
                     System.out.println("--------------------------------------------------");
                     Iterator<Employee> i = arrayList.iterator();
@@ -59,7 +59,8 @@ class CRUD_Demo {
                         Employee e = i.next();
                         System.out.println(e);
                     }
-                break;
+                    System.out.println("--------------------------------------------------");
+                    break;
                 case 3:
                     boolean found = false;
                     System.out.println("Enter Empno to Search : ");
@@ -77,7 +78,7 @@ class CRUD_Demo {
                         System.out.println("Record Not found");
                     }
                     System.out.println("--------------------------------------------------");
-                break;
+                    break;
                 case 4:
                     found = false;
                     System.out.println("Enter Empno to Delete : ");
@@ -97,13 +98,12 @@ class CRUD_Demo {
                         System.out.println("Record is Deleted Successfully.....!");
                     }
                     System.out.println("--------------------------------------------------");
-                break;
+                    break;
                 case 5:
                     found = false;
                     System.out.println("Enter Empno to Update : ");
                     empno = inputInt.nextInt();
-                    System.out.println("--------------------------------------------------");
-                    ListIterator<Employee>li = arrayList.ListIterator();
+                    ListIterator<Employee> li = ((List<Employee>)arrayList).listIterator();
                     while(li.hasNext()) {
                         Employee e = li.next();
                         if (e.getEmpno() == empno) {
@@ -121,9 +121,14 @@ class CRUD_Demo {
                         System.out.println("Record is Updated Successfully.....!");
                     }
                     System.out.println("--------------------------------------------------");
-                break;
+                    break;
+                case 0:
+                    System.out.println("Exiting the program.");
+                    break;
+                default:
+                    System.out.println("Invalid Choice. Please enter a valid option.");
+                    break;
             }
-        } while (ch !=0);
+        } while (ch != 0);
     }
 }
-
